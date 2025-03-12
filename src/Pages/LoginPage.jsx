@@ -38,7 +38,7 @@ const LoginPage = () => {
         toast.success("Connexion Réussie");
         console.log("test");
         // mettre la navigate vers profil
-        navigate("/Home"); 
+        navigate("/"); 
       } catch (error) {
         console.log(error);
         toast.error("Une erreur est survenue");
@@ -63,7 +63,7 @@ const LoginPage = () => {
         setIsAuthenticated(true)
         setUser(AuthService.getUser())
       
-       navigate ('/Home')
+       navigate ('/')
      } catch (error) {
         console.log(error);
         toast.error("Une erreur est survenue");

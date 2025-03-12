@@ -25,7 +25,7 @@ const NavBar = () => {
     AuthService.logout();
     setIsAuthenticated(false);
     setUser(null);
-    navigate("/Home");
+    navigate("/");
   };
 
 
@@ -33,7 +33,7 @@ const NavBar = () => {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container className='nav'>
-      <Navbar.Brand href="/Home" >
+      <Navbar.Brand href="/" >
           <img
             src="src\assets\logo-transparent-png.png" 
             alt="Logo"

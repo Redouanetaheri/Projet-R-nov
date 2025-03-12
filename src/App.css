@@ -109,6 +109,8 @@ button:hover {
   color: #fff; 
   border: none;
   border-radius: 5px;
+  box-shadow: -15px 5px 4px 0 rgba(0, 0, 0, 0.25);
+  -hover: none;
 }
 
 .contact-page .btn-primary {
@@ -126,4 +128,153 @@ button:hover {
 .bodyContainer {
 background-color: #D4D6C9;
 width: 100%;
+}
+
+/* Footer */
+
+li {
+  cursor: pointer; /* Change le curseur en une main lorsqu'on survole */
+}
+
+li a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Garde la couleur du texte */
+  display: block; /* Agrandit la zone cliquable */
+  padding: 5px; /* Ajoute de l’espace pour cliquer plus facilement */
+}
+
+li a:hover {
+  color: #fff; 
+  opacity: 0.9;
+}
+
+
+
+/* CGUS */
+
+.cgus-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+h2 {
+  text-align: center;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #2980b9;
+  margin-top: 20px;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FAQ */
+
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  color: #1c5d85;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.up {
+  transform: rotate(180deg);
+}
+
+.down {
+  transform: rotate(0deg);
+}
+
+/* HomePage */
+
+.homepage-card:hover { 
+  background-color: #f9f9f9;
+  transform: scale(1.1);
+  transition: transform 0.1s;
+}
+
+.count-up-text{
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+}
+/* AproposPage */
+
+.Apropos-card:hover { 
+  background-color: #f9f9f9;
+  transform: scale(1.1);
+  transition: transform 0.1s;
 }

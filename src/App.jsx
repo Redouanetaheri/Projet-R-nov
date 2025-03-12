@@ -15,6 +15,9 @@ import AuthContext from './Context/AuthContext';
 import AuthService from './Services/AuthService';
 import { useState } from 'react';
 import { ToastContainer } from "react-toastify";
+import Footer from './Component/Footer';
+import CGUS from './Pages/CGUS';
+import FAQ from './Pages/FAQ';
 // import Footer from './Component/Footer';
 
 function App() {
@@ -28,7 +31,7 @@ function App() {
       <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path='/Home' element={<HomePage></HomePage>}></Route>
+        <Route path='/' element={<HomePage></HomePage>}></Route>
         <Route path='/Login' element={<LoginPage></LoginPage>}></Route>
         <Route path='/Prestations' element={<PrestationsPage></PrestationsPage>}></Route>
         <Route path='/Contact' element={<ContactPage></ContactPage>}></Route>
@@ -36,7 +39,10 @@ function App() {
         <Route path='/Formulaire' element={<FormulairePage></FormulairePage>}></Route>
         <Route path='/PageAdmin' element={<PageAdmin></PageAdmin>}></Route>
         <Route path='/PageProfil' element={<PageProfil></PageProfil>}></Route>
+        <Route path='/CGUS' element={<CGUS></CGUS>}></Route>
+        <Route path='/FAQ' element={<FAQ></FAQ>}></Route>
       </Routes>
+      <Footer></Footer>
       
       <ToastContainer
                 position="bottom-center"

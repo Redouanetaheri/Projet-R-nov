@@ -48,7 +48,7 @@ const ContactPage = () => {
 
       <Row className="mt-4">
         <Col md={6} className="mx-auto">
-          <Card>
+          <Card className="card-contact">
             <Card.Body>
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formName">
@@ -69,6 +69,30 @@ const ContactPage = () => {
                     placeholder="Entrez votre email"
                     name="email"
                     value={formData.email}
+                    onChange={handleInputChange}
+                  />
+                </Form.Group>
+
+                
+                <Form.Group controlId="formObject" className="mt-3">
+                  <Form.Label>Objet</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Entrez l'objet"
+                    name="Object"
+                    value={formData.Object}
+                    onChange={handleInputChange}
+                  />
+                </Form.Group>
+
+                
+                <Form.Group controlId="formPhone" className="mt-3">
+                  <Form.Label>Téléphone</Form.Label>
+                  <Form.Control
+                    type="Number"
+                    placeholder="Entrez votre numéro"
+                    name="Phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -94,11 +118,6 @@ const ContactPage = () => {
         </Col>
       </Row>
 
-      <Row className="mt-4">
-        <Col className="text-center">
-          <i className="bi bi-geo-alt" style={{ fontSize: "2rem" }}></i>
-        </Col>
-      </Row>
     </div>
     </>;
 }
