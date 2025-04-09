@@ -10,6 +10,54 @@
  
 }
 
+
+.navbar-brand img {
+  width: 50px;
+  height: auto;
+  transition: 0.3s ease-in-out;
+}
+
+/* Alignement général */
+.navbar .container.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Sur petit écran */
+@media (max-width: 768px) {
+  .navbar .container.nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    align-self: center;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-collapse .nav-link {
+    padding: 10px 0;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
 .login-page {
   background-color: #D4D6C9;
 
@@ -85,6 +133,14 @@ button:hover {
   margin: auto;
 }
 
+@media (max-width: 768px) {
+  .separator .vertical-line {
+    height: 2px;
+    width: 80%; /* ou 100% selon ton besoin */
+    margin: 20px auto;
+  }
+}
+
 
 .contact-page {
   font-family: Arial, sans-serif;
@@ -133,14 +189,14 @@ width: 100%;
 /* Footer */
 
 li {
-  cursor: pointer; /* Change le curseur en une main lorsqu'on survole */
+  cursor: pointer;
 }
 
 li a {
-  text-decoration: none; /* Supprime le soulignement */
-  color: inherit; /* Garde la couleur du texte */
-  display: block; /* Agrandit la zone cliquable */
-  padding: 5px; /* Ajoute de l’espace pour cliquer plus facilement */
+  text-decoration: none; 
+  color: inherit; 
+  display: block; 
+  padding: 5px; 
 }
 
 li a:hover {
@@ -277,4 +333,81 @@ h1 {
   background-color: #f9f9f9;
   transform: scale(1.1);
   transition: transform 0.1s;
+}
+
+/* PrestaCard */
+
+.slider-container{
+  background-color: #D4D6C9;
+  display: flex;
+  flex-direction: row; 
+  gap: 20px;  
+  justify-content: space-evenly; 
+  padding: 20px; 
+}
+.cards-container {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;  
+  gap: 20px;  
+  justify-content: center; 
+  padding: 20px; 
+}
+
+.presta-card {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  width: 300px;  
+  height: auto;
+  border-radius: 10px; 
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.presta-card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+ 
+}
+
+.card-title {
+  font-size: 20px;
+  color: blue;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+/* Pageprofil */
+
+.page-profil {
+  background-color: #D4D6C9;
+  display: flex;
+  justify-content: center;
+  margin-bottom: auto;
+}
+
+/* Formulairepage */
+
+.container-form {
+  background-color: #D4D6C9;
+  margin-top: auto;
 }

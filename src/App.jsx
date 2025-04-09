@@ -18,7 +18,8 @@ import { ToastContainer } from "react-toastify";
 import Footer from './Component/Footer';
 import CGUS from './Pages/CGUS';
 import FAQ from './Pages/FAQ';
-// import Footer from './Component/Footer';
+import RecapPage from './Pages/RecapPage';
+import ReservationPage from './Pages/ReservationPage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(AuthService.isValid());
@@ -41,6 +42,8 @@ function App() {
         <Route path='/PageProfil' element={<PageProfil></PageProfil>}></Route>
         <Route path='/CGUS' element={<CGUS></CGUS>}></Route>
         <Route path='/FAQ' element={<FAQ></FAQ>}></Route>
+        <Route path='/Recap' element={<RecapPage></RecapPage>}></Route>
+        <Route path='/Reservation' element={<ReservationPage></ReservationPage>}></Route>
       </Routes>
       <Footer></Footer>
       

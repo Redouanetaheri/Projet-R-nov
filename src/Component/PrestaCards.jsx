@@ -1,52 +1,46 @@
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+// import Card from 'react-bootstrap/Card';
+// import Col from 'react-bootstrap/Col';
+// import Row from 'react-bootstrap/Row';
 
 
  
-// import Card from 'react-bootstrap/Card';
-// import { useNavigate } from 'react-router-dom';
-// import React, { Component } from "react";
+import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
+import React, { Component } from "react";
+import { Col, Row } from 'react-bootstrap';
 
 
-// const BookCard = ({ livre }) => {
-// const navigate = useNavigate();
+const PrestaCards = ({ services }) => {
+const navigate = useNavigate();
 
-//   const navigateTo = (id_livre) => {
-//     navigate("/livre/"+id_livre);
-//   }
+  const navigateTo = (service_id) => {
+    navigate("/services/"+service_id);
+  }
   
-//   return <Card style={{ width: '13.5vw' }} onClick={() => {navigateTo(livre.id_livre)}}>
-//         <Card.Img 
-//         style={{ height: '300px'}}
-//           className='card-img' 
-//           variant="top" 
-//           src={`http://127.0.0.1:3000/livre/image/${livre.image_url}`}  
-//         />
-//       </Card>
-// };
+  console.log(services)
+  return <>
+   
+      <Card className="presta-card" onClick={() => {navigateTo(services.service_id)}}>
+        <Card.Img 
+          className="card-img"
+          variant="top" 
+          src={`http://127.0.0.1:3000/services/image/${services.image_url}`}  
+        />
+          <Card.Body>
+            <Card.Title style={{ color: "blue", fontSize: "20px" }}>
+              {services.name || "Nom de la prestation"}
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "18px" }}>
+              {services.price_range || "0 ���"}
+            </Card.Text>
+        <Card.Text style={{ color: "black", fontSize: "18px" }}>
+          {services.description || "Aucune description"}
+        </Card.Text>
+      </Card.Body>
+      </Card>
+   
+       </>
+};
 
-// export default BookCard;
-function Cards() {
-  return (
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  );
-}
 
-export default Cards;
+export default PrestaCards;

@@ -7,13 +7,13 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  //---------------Fonction pour se co----------------------
+  // Fonction pour se connecter
   const login = (userData) => {
     setIsAuthenticated(true);
     setUser(userData);
   };
 
-  //-----------------Fonction pour se déco------------------
+  // Fonction pour se déconnecter
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);

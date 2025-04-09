@@ -89,7 +89,7 @@ const ContactPage = () => {
                 <Form.Group controlId="formPhone" className="mt-3">
                   <Form.Label>Téléphone</Form.Label>
                   <Form.Control
-                    type="Number"
+                    type="tel"
                     placeholder="Entrez votre numéro"
                     name="Phone"
                     value={formData.phone}

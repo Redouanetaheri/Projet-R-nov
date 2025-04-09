@@ -37,7 +37,7 @@ const LoginPage = () => {
         });
         toast.success("Connexion Réussie");
         console.log("test");
-        // mettre la navigate vers profil
+        
         navigate("/"); 
       } catch (error) {
         console.log(error);
@@ -147,7 +147,7 @@ const LoginPage = () => {
               <Form.Group className="mb-3" controlId="formSignupTel">
                 <Form.Label>Téléphone</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="tel"
                   placeholder="Entrez votre Numéro"
                   value={signupTel}
                   onChange={(e) => setSignupTel(e.target.value)}

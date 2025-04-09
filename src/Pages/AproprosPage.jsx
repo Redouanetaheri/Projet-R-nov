@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 
 
 const AproposPage = () => {
+  
     return <>
     <div style={{ backgroundColor: '#D4D6C9', minHeight: '100vh', padding: '50px 0' }}>
    <Container className="mt-5">
@@ -54,7 +55,7 @@ const AproposPage = () => {
           <Card className="Apropos-card shadow-sm p-3">
             <Card.Body>
               <h3>Fiabilité</h3>
-              <p>Nous sélectionnons des artisans qualifiés et nous nous engageons sur la qualité des prestations.</p>
+              <p>Nous sélectionnons des artisans qualifiés fiable et nous nous engageons sur la qualité des prestations.</p>
             </Card.Body>
           </Card>
         </Col>

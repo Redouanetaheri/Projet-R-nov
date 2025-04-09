@@ -15,10 +15,14 @@ function getUsers(users){
 function getSign(sign){
     return axios.post('http://127.0.0.1:3000/users/SigninPage', sign)
 }
+function getUptade(update){
+    return axios.post('http://127.0.0.1:3000/users/update/'+id ,update)
+}
 
 
 export default {login,
     getUsers,
     getSign,
-    getUsersById
+    getUsersById,
+    getUptade
 }

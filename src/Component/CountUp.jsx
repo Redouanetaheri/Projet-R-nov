@@ -10,7 +10,7 @@ export default function CountUp({
   className = "",
   startWhen = true,
   separator = "",
-  suffix = "h", // Ajout du suffixe
+  suffix = "", // Ajout du suffixe
   onStart,
   onEnd,
 }) {

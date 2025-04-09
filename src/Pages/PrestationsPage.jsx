@@ -1,42 +1,79 @@
-import { Col, Row } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { useNavigate } from 'react-router-dom';
-// import DetailsPage from '../Pages/DetailsPage';
-
-
+import React, { useEffect, useState } from "react";
+import Card from "react-bootstrap/Card";
+import { useNavigate } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import PrestaService from "../Services/PrestaService";
+import PrestaCards from "../Component/PrestaCards";
 
 const PrestationsPage = () => {
-    const navigate = useNavigate();
-    
-//   const navigateTo = (id_livre) => {
-//     navigate("/livre/"+id_livre);}
+ 
+  const [Elec, setElec] = useState([]);
+  const [Enduit, setEnduit] = useState([]);
+  const [Peinture, setPeinture] = useState([]);
+  const navigate = useNavigate();
 
-    return <>
-    <div className="bodyContainer">
    
-    <h1>Prestations</h1>
+  const fetchElec = async (service_id) => {
+    try {
+      const response = await PrestaService.getServiceById(service_id);
+      console.log(
+        response.data
+      );
+      setElec(response.data);
+    } catch (error) {
+      console.log(
+        "Erreur lors de la récupération des services pour les prestations",
+        service_id,
+        error
+      );
+    }
+  };
+  const fetchEnduit = async (service_id) => {
+    try {
+      const response = await PrestaService.getServiceById(service_id);
+      console.log(
+        response.data
+      );
+      setEnduit(response.data);
+    } catch (error) {
+      console.log(
+        "Erreur lors de la récupération des services pour les prestations",
+        service_id,
+        error
+      );
+    }
+  };
+  const fetchPeinture = async (service_id) => {
+    try {
+      const response = await PrestaService.getServiceById(service_id);
+      console.log(
+        response.data
+      );
+      setPeinture(response.data);
+    } catch (error) {
+      console.log(
+        "Erreur lors de la récupération des services pour les prestations",
+        service_id,
+        error
+      );
+    }
+  };
 
-    <div className='EscapeCard'>
-    <Row xs={1} md={3} className="g-4">
-      {Array.from({ length: 3 }).map((_, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Electricité</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-    </div>
-    </div>
+  useEffect(() => {
+    fetchElec(1);
+    fetchEnduit(3);
+    fetchPeinture(4);
+  }, []);
+  
+    return <>
+
+<div className="slider-container">
+  
+   <PrestaCards key={Elec.service_id} services={Elec} />
+   <PrestaCards key={Enduit.service_id} services={Enduit} />
+   <PrestaCards key={Peinture.service_id} services={Peinture} />
+   
+</div>
 
     </>;
 }

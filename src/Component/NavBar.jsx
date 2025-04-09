@@ -15,12 +15,12 @@ const NavBar = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  //-------------------------------Décoder le token pour récupérer les informations----------------------------
+  // Décoder le token pour récupérer les informations
   
   const lastname = token ? jwtDecode(token).lastname : null;
   const role = token ? jwtDecode(token).role : null; 
 
-  //-------------------------------Fonction pour se déco-------------------------------------------
+  // Fonction pour se déconnecter
   const handleLogout = () => {
     AuthService.logout();
     setIsAuthenticated(false);
@@ -33,15 +33,15 @@ const NavBar = () => {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container className='nav'>
-      <Navbar.Brand href="/" >
+      <Navbar.Brand as={Link} to="/">
           <img
-            src="src\assets\logo-transparent-png.png" 
+            src="src\assets\logo-png.png"
             alt="Logo"
             width="50"
             height="50"
-            style={{ marginLeft: '-50px' }}
-          />
-          
+            className="d-inline-block align-top"
+          />{" "}
+          <span className="ms-2 fw-bold">MonProjetRénov</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -49,12 +49,6 @@ const NavBar = () => {
             <Link  className="nav-link" to="/Apropos">A Propos</Link>
             <Link className="nav-link" to="/Prestations">Prestations</Link>
             <Link className="nav-link"to="/Contact">Contact</Link>
-            
-           
-            
-            
-          
-            
           </Nav>
         </Navbar.Collapse>
         {!isAuthenticated ? <> 
